@@ -3,7 +3,7 @@ jQuery.ganttView
 
 The jQuery.ganttView plugin is a very lightweight plugin for creating a Gantt chart in plain HTML...no vector graphics or images required.  The plugin supports dragging and resizing the Gantt blocks and callbacks to trap the updated data.
 
-[![Sample Gantt](https://raw.githubusercontent.com/thegrubbsian/jquery.ganttView/master/example/jquery-ganttview.png) A sample chart](http://thegrubbsian.github.io/jquery.ganttView/example/index.html)
+[![Sample Gantt](https://raw.githubusercontent.com/kidjapa/jquery.ganttView/master/example/jquery-ganttview-new.png) A sample chart](http://thegrubbsian.github.io/jquery.ganttView/example/index.html)
 
 
 Browser Compatibility
