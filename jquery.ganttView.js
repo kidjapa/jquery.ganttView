@@ -53,7 +53,8 @@ behavior: {
             	draggable: true,
             	resizable: true,
 				expandable: true,
-				defaultGroupOpened: false
+				defaultGroupOpened: false,
+				useSlideWidth: false,
             }
         };
         
@@ -116,10 +117,16 @@ behavior: {
 		function render() {
 			addVtHeader(div, opts.data, opts.cellHeight);
 
-            var slideDiv = jQuery("<div>", {
-                "class": "ganttview-slide-container",
-                "css": { "width": opts.slideWidth + "px" }
-            });
+			var slideDiv = null;
+			if(opts.behavior.useSlideWidth){
+				slideDiv = jQuery("<div>", {
+					"class": "ganttview-slide-container",
+					"css": { "width": opts.slideWidth + "px" }
+				});
+			}else{
+				slideDiv = jQuery("<div>", {
+					"class": "ganttview-slide-container"});
+			}
 			
             dates = getDates(opts.start, opts.end);
             addHzHeader(slideDiv, dates, opts.cellWidth);
@@ -399,6 +406,7 @@ behavior: {
         function getDateBlock(series, size, offset, cellWidth){
         	return jQuery("<div>", {
 				"class": "ganttview-block",
+				'style': !opts.behavior.draggable ? "cursor: pointer;" : "",
 				"title": series.name + ", " + size + " days",
 				"css": {
 					"width": ((size * cellWidth) - 9) + "px",
